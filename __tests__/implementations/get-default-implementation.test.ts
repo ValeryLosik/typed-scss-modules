@@ -18,14 +18,15 @@ describe("getDefaultImplementation", () => {
     expect(resolver).toHaveBeenNthCalledWith(2, "sass");
   });
 
-  it("returns node-sass even if both sass and node-sass do not exist", () => {
+  it("returns node-sass even if all implementations do not exist", () => {
     const resolver = jest.fn(() => {
       throw new Error("Not Found");
     }) as unknown as RequireResolve;
 
     expect(getDefaultImplementation(resolver)).toBe("node-sass");
-    expect(resolver).toHaveBeenCalledTimes(2);
+    expect(resolver).toHaveBeenCalledTimes(3);
     expect(resolver).toHaveBeenNthCalledWith(1, "node-sass");
     expect(resolver).toHaveBeenNthCalledWith(2, "sass");
+    expect(resolver).toHaveBeenNthCalledWith(3, "sass-embedded");
   });
 });

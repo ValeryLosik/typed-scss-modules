@@ -391,3 +391,199 @@ export default styles;
   },
 ]
 `;
+
+exports[`sass-embedded implementation main outputs the correct files when outputFolder is passed 1`] = `
+Array [
+  Object {
+    "contents": "export const myCustomClass: string;
+export const nestedAnother: string;
+export const nestedClass: string;
+export const nestedStyles: string;
+export const someStyles: string;
+",
+    "path": "../__generated__/__tests__/dummy-styles/alias-prefixes.scss.d.ts",
+  },
+  Object {
+    "contents": "export const myCustomClass: string;
+export const nestedAnother: string;
+export const nestedClass: string;
+export const someClass: string;
+export const someStyles: string;
+",
+    "path": "../__generated__/__tests__/dummy-styles/aliases.scss.d.ts",
+  },
+  Object {
+    "contents": "export const nestedAnother: string;
+export const nestedClass: string;
+export const someStyles: string;
+",
+    "path": "../__generated__/__tests__/dummy-styles/complex.scss.d.ts",
+  },
+  Object {
+    "contents": "export const composedClass: string;
+",
+    "path": "../__generated__/__tests__/dummy-styles/composes.scss.d.ts",
+  },
+  Object {
+    "contents": "export const app: string;
+export const appHeader: string;
+export const logo: string;
+",
+    "path": "../__generated__/__tests__/dummy-styles/dashes.scss.d.ts",
+  },
+  Object {
+    "contents": "export const globalStyle: string;
+",
+    "path": "../__generated__/__tests__/dummy-styles/global-variables.scss.d.ts",
+  },
+  Object {
+    "contents": "export const randomClass: string;
+",
+    "path": "../__generated__/__tests__/dummy-styles/invalid.scss.d.ts",
+  },
+  Object {
+    "contents": "export const nestedStyles: string;
+",
+    "path": "../__generated__/__tests__/dummy-styles/nested-styles/style.scss.d.ts",
+  },
+  Object {
+    "contents": "export const someClass: string;
+",
+    "path": "../__generated__/__tests__/dummy-styles/style.scss.d.ts",
+  },
+]
+`;
+
+exports[`sass-embedded implementation main reads options from the configuration file 1`] = `
+Array [
+  Object {
+    "contents": "export type Styles = {
+  myCustomClass: string;
+  nestedAnother: string;
+  nestedClass: string;
+  nestedStyles: string;
+  someStyles: string;
+};
+
+export type ClassNames = keyof Styles;
+
+declare const styles: Styles;
+
+export default styles;
+",
+    "path": "dummy-styles/alias-prefixes.scss.d.ts",
+  },
+  Object {
+    "contents": "export type Styles = {
+  myCustomClass: string;
+  nestedAnother: string;
+  nestedClass: string;
+  someClass: string;
+  someStyles: string;
+};
+
+export type ClassNames = keyof Styles;
+
+declare const styles: Styles;
+
+export default styles;
+",
+    "path": "dummy-styles/aliases.scss.d.ts",
+  },
+  Object {
+    "contents": "export type Styles = {
+  nestedAnother: string;
+  nestedClass: string;
+  someStyles: string;
+};
+
+export type ClassNames = keyof Styles;
+
+declare const styles: Styles;
+
+export default styles;
+",
+    "path": "dummy-styles/complex.scss.d.ts",
+  },
+  Object {
+    "contents": "export type Styles = {
+  composedClass: string;
+};
+
+export type ClassNames = keyof Styles;
+
+declare const styles: Styles;
+
+export default styles;
+",
+    "path": "dummy-styles/composes.scss.d.ts",
+  },
+  Object {
+    "contents": "export type Styles = {
+  app: string;
+  appHeader: string;
+  logo: string;
+};
+
+export type ClassNames = keyof Styles;
+
+declare const styles: Styles;
+
+export default styles;
+",
+    "path": "dummy-styles/dashes.scss.d.ts",
+  },
+  Object {
+    "contents": "export type Styles = {
+  globalStyle: string;
+};
+
+export type ClassNames = keyof Styles;
+
+declare const styles: Styles;
+
+export default styles;
+",
+    "path": "dummy-styles/global-variables.scss.d.ts",
+  },
+  Object {
+    "contents": "export type Styles = {
+  randomClass: string;
+};
+
+export type ClassNames = keyof Styles;
+
+declare const styles: Styles;
+
+export default styles;
+",
+    "path": "dummy-styles/invalid.scss.d.ts",
+  },
+  Object {
+    "contents": "export type Styles = {
+  nestedStyles: string;
+};
+
+export type ClassNames = keyof Styles;
+
+declare const styles: Styles;
+
+export default styles;
+",
+    "path": "dummy-styles/nested-styles/style.scss.d.ts",
+  },
+  Object {
+    "contents": "export type Styles = {
+  someClass: string;
+};
+
+export type ClassNames = keyof Styles;
+
+declare const styles: Styles;
+
+export default styles;
+",
+    "path": "dummy-styles/style.scss.d.ts",
+  },
+]
+`;

@@ -1,5 +1,6 @@
 import nodeSass from "node-sass";
 import sass from "sass";
+import sassEmbedded from "sass-embedded";
 
 /**
  * A list of all possible SASS package implementations that can be used to
@@ -7,11 +8,12 @@ import sass from "sass";
  * that they provide a nearly identical API so they can be swapped out but
  * all of the same logic can be reused.
  */
-export const IMPLEMENTATIONS = ["node-sass", "sass"] as const;
+export const IMPLEMENTATIONS = ["node-sass", "sass", "sass-embedded"] as const;
 export type Implementations = typeof IMPLEMENTATIONS[number];
 
-type Implementation = typeof nodeSass | typeof sass;
+type Implementation = typeof nodeSass | typeof sass | typeof sassEmbedded;
 
+const defaultFallbackImplementation = "node-sass";
 /**
  * Determine which default implementation to use by checking which packages
  * are actually installed and available to use.
@@ -21,20 +23,13 @@ type Implementation = typeof nodeSass | typeof sass;
 export const getDefaultImplementation = (
   resolver: RequireResolve = require.resolve
 ): Implementations => {
-  let pkg: Implementations = "node-sass";
-
-  try {
-    resolver("node-sass");
-  } catch (error) {
+  for (const implementation of IMPLEMENTATIONS) {
     try {
-      resolver("sass");
-      pkg = "sass";
-    } catch (ignoreError) {
-      pkg = "node-sass";
-    }
+      resolver(implementation);
+      return implementation;
+    } catch (ignoreError) {}
   }
-
-  return pkg;
+  return defaultFallbackImplementation;
 };
 
 /**
@@ -45,9 +40,14 @@ export const getDefaultImplementation = (
 export const getImplementation = (
   implementation?: Implementations
 ): Implementation => {
-  if (implementation === "sass") {
-    return require("sass");
-  } else {
-    return require("node-sass");
+  switch (implementation) {
+    case "sass":
+      return require("sass");
+    case "sass-embedded":
+      return require("sass-embedded");
+    case "node-sass":
+    case undefined:
+    default:
+      return require("node-sass");
   }
 };
