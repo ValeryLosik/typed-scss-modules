@@ -1,5 +1,6 @@
 import fs from "fs";
-import { camelCase, paramCase, snakeCase } from "change-case";
+import camelCase from "camelcase";
+import { paramCase, snakeCase } from "change-case";
 
 import { sourceToClassNames } from "./source-to-class-names";
 import { Implementations, getImplementation } from "../implementations";

@@ -2072,6 +2072,8 @@
   "version" "6.1.0"
 
 "ansicolors@*":
+  "integrity" "sha1-ZlWX3oap/+Oqm/vmyuXG6kJrSXk="
+  "resolved" "https://artifactory.tlnlive.ptec:443/api/npm/live-html5/ansicolors/-/ansicolors-0.3.2.tgz"
   "version" "0.3.2"
 
 "ansicolors@~0.3.2":
@@ -2484,13 +2486,13 @@
     "map-obj" "^4.0.0"
     "quick-lru" "^4.0.1"
 
-"camelcase@^5.3.1":
-  "integrity" "sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg== sha1-48mzFWnhBoEd8kL3FXJaH0xJQyA="
+"camelcase@^5.0.0", "camelcase@^5.3.1":
+  "integrity" "sha1-48mzFWnhBoEd8kL3FXJaH0xJQyA="
   "resolved" "https://artifactory.tlnlive.ptec:443/api/npm/live-html5/camelcase/-/camelcase-5.3.1.tgz"
   "version" "5.3.1"
 
 "camelcase@^6.2.0":
-  "integrity" "sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA== sha1-VoW5XrIJrJwMF3Rnd4ychN9Yupo="
+  "integrity" "sha1-VoW5XrIJrJwMF3Rnd4ychN9Yupo="
   "resolved" "https://artifactory.tlnlive.ptec:443/api/npm/live-html5/camelcase/-/camelcase-6.3.0.tgz"
   "version" "6.3.0"
 
